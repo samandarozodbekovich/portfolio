@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>positioning</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <style>
+        .container{
+            padding: 30px;
+        }
+        
+        .form-control{
+            display: block;
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .form-control input{
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .custom-checkbox{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            background-color: #ddd;
+        }
+
+        .form-control:hover input ~.custom-checkbox{
+            background-color: #ccc;
+        }
+        .form-control input:checked~.custom-checkbox{
+            background-color: #2D846E;
+        }
+
+        .custom-checkbox::after{
+            left: 8px;
+            top: 4px;
+            width: 5px;
+            height:10px;
+            border:solid white ;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+            content: "";
+            position: absolute;
+            display: none;
+
+        }
+
+        .form-control input:checked ~ .custom-checkbox::after{
+            display: block;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>stylelar berilgan checkbox</h1>
+        <label class="form-control">checkbox 1
+        <input type="checkbox" name="checkbox-1" value="checkbox-1">
+        <span class="custom-checkbox"></span>
+        </label>
+        <label class="form-control">checkbox 2
+            <input type="checkbox" name="checkbox-2" value="checkbox-2">
+            <span class="custom-checkbox"></span>
+        </label>
+        <label class="form-control">checkbox 3
+            <input type="checkbox" name="checkbox-3" value="checkbox-3">
+            <span class="custom-checkbox"></span>
+        </label>
+    </div>
+</body> 
+</html>
